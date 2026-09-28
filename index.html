@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Defender Roadmap</title>
+<meta name="description" content="Blue Team + GRC roadmap with a Security+ SY0-701 companion, progress tracking and accountability.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230E6A73'/><path d='M16 6l8 3v7c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V9z' fill='none' stroke='%23fff' stroke-width='2.2'/></svg>">
+</head>
+<body>
+<a class="skip" href="#view">Skip to content</a>
+<div class="app">
+  <aside class="side">
+    <a class="brand" href="#/">
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="var(--blue)"/><path d="M16 6l8 3v7c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V9z" fill="none" stroke="#fff" stroke-width="2.2"/></svg>
+      <span><b>Defender Roadmap</b><small>Blue Team + GRC</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#/" data-route="">Dashboard</a>
+      <a href="#/roadmap" data-route="roadmap">Roadmap</a>
+      <a href="#/secplus" data-route="secplus">Security+ companion</a>
+      <a href="#/log" data-route="log">Study log</a>
+      <a href="#/checkin" data-route="checkin">Weekly check-in</a>
+      <a href="#/settings" data-route="settings">Settings</a>
+    </nav>
+    <div class="side-foot">
+      <div class="mini-progress"><span id="side-pct">0%</span><div class="bar"><i id="side-fill"></i></div></div>
+      <small>Progress is saved in this browser. Back it up in Settings.</small>
+    </div>
+  </aside>
+  <main id="view" class="view" tabindex="-1"></main>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Defender &amp; GRC Roadmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap">
+<style>
+:root{
+  --ground:#F3F6F7; --surface:#FFFFFF; --ink:#13212B; --muted:#56656F; --line:#D5DDE1;
+  --blue:#0E6A73; --blue-soft:#DDEFF0; --grc:#8A5A0B; --grc-soft:#F6EBD6; --done:#2F7D4A;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --cond:"IBM Plex Sans Condensed","IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#0E161C; --surface:#152028; --ink:#E4ECEF; --muted:#94A5AE; --line:#26343D;
+  --blue:#5CC3CC; --blue-soft:#15343A; --grc:#E0B25E; --grc-soft:#3A2D14; --done:#6CC58B;}}
+:root[data-theme="dark"]{
+  --ground:#0E161C; --surface:#152028; --ink:#E4ECEF; --muted:#94A5AE; --line:#26343D;
+  --blue:#5CC3CC; --blue-soft:#15343A; --grc:#E0B25E; --grc-soft:#3A2D14; --done:#6CC58B;}
+body{background:var(--ground);color:var(--ink);font:15px/1.6 var(--sans);padding-inline:16px}
+.wrap{max-width:860px;margin:0 auto;padding-block:40px 64px;display:grid;gap:40px}
+h1,h2,h3{font-family:var(--cond);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(30px,6vw,44px)}
+h2{font-size:24px}
+h3{font-size:18px}
+p{margin:0;max-width:66ch}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header{display:grid;gap:14px}
+.lede{font-size:17px;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;font:13px var(--mono);color:var(--muted)}
+.meta b{color:var(--ink);font-weight:500}
+.tag{display:inline-block;font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 7px;border-radius:3px}
+.tag.blue{background:var(--blue-soft);color:var(--blue)}
+.tag.grc{background:var(--grc-soft);color:var(--grc)}
+.tag.both{background:var(--line);color:var(--ink)}
+section{display:grid;gap:18px}
+.strategy{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.strategy div{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px;display:grid;gap:8px;align-content:start}
+.progress{display:flex;align-items:center;gap:12px;font:13px var(--mono);color:var(--muted)}
+.bar{flex:1;height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--done);transition:width .3s}
+.phase{border-top:2px solid var(--ink);padding-top:16px;display:grid;gap:14px}
+.phase-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.when{font:500 13px var(--mono);color:var(--muted)}
+.goal{color:var(--muted)}
+ul.tasks{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+ul.tasks li label{display:grid;grid-template-columns:20px 1fr auto;gap:10px;align-items:start;padding:8px 10px;border-radius:5px;cursor:pointer}
+ul.tasks li label:hover{background:var(--surface)}
+ul.tasks input{margin:4px 0 0;width:16px;height:16px;accent-color:var(--done)}
+ul.tasks input:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+ul.tasks input:checked + span{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+.cert{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:4px;padding:12px 14px;display:grid;gap:4px}
+.cert.grc{border-left-color:var(--grc)}
+.cert b{font-family:var(--cond);font-size:16px}
+.cert span{color:var(--muted);font-size:14px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+.later{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.later div{border:1px dashed var(--line);border-radius:6px;padding:14px;display:grid;gap:6px;align-content:start}
+.later span{color:var(--muted);font-size:14px}
+ul.plain{margin:0;padding-left:18px;display:grid;gap:6px;max-width:70ch}
+a{color:var(--blue)}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;display:grid;gap:6px}
+button.reset{justify-self:start;font:13px var(--mono);background:none;border:1px solid var(--line);color:var(--muted);padding:6px 10px;border-radius:4px;cursor:pointer}
+button.reset:focus-visible{outline:2px solid var(--blue)}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">12-month plan · Blue Team + GRC</span>
+  <h1>From graduate to defender</h1>
+  <p class="lede">One technical track that gets you hired as a SOC analyst, with a governance, risk and compliance layer built alongside it. That combination fits how Nigerian banks and fintechs actually hire under the CBN cybersecurity framework and NDPA.</p>
+  <div class="meta"><span>Pace: <b>10–15 hrs/week</b></span><span>Fits around: <b>NYSC</b></span><span>First job target: <b>SOC Analyst L1 / IT Risk Analyst</b></span></div>
+</header>
+
+<section>
+  <h2>The strategy</h2>
+  <div class="strategy">
+    <div><span class="tag both">Core</span><h3>One shared foundation</h3><p>Security+ covers the ground both tracks stand on: threats, controls, risk, governance. You study it once and it serves both.</p></div>
+    <div><span class="tag blue">Blue Team</span><h3>Skills that get the first job</h3><p>SOC roles hire juniors in volume. Hands-on log analysis, SIEM and incident response make you employable fastest.</p></div>
+    <div><span class="tag grc">GRC</span><h3>The layer that sets you apart</h3><p>A defender who can map an alert to an ISO 27001 control or a CBN requirement is rare, and that's the path into risk, audit and leadership roles.</p></div>
+  </div>
+  <div class="progress"><span id="count">0 / 0 done</span><div class="bar"><i id="fill"></i></div></div>
+</section>
+
+<section class="phase">
+  <div class="phase-head"><h2>Phase 1 · Foundations &amp; Security+</h2><span class="when">Months 1–3</span><span class="tag both">Core</span></div>
+  <p class="goal">Goal: pass Security+ (SY0-701) and get comfortable with hands-on basics.</p>
+  <ul class="tasks">
+    <li><label><input type="checkbox" id="t1"><span>Watch Professor Messer's free SY0-701 course end to end (roughly 1 domain per 2 weeks).</span></label></li>
+    <li><label><input type="checkbox" id="t2"><span>Complete TryHackMe "Pre-Security" and "Cyber Security 101" paths for hands-on practice.</span></label></li>
+    <li><label><input type="checkbox" id="t3"><span>Buy one practice-exam set (Jason Dion or similar) and track your weak domains.</span></label></li>
+    <li><label><input type="checkbox" id="t4"><span>Pay special attention to Domain 5 (governance, risk, compliance), which is your GRC starting point.</span></label></li>
+    <li><label><input type="checkbox" id="t5"><span>Book the exam once you score 85%+ consistently on practice tests. Compare the voucher price from resellers before paying list.</span></label></li>
+    <li><label><input type="checkbox" id="t6"><span>Create a LinkedIn "Cybersecurity" headline and a GitHub/blog to document everything from here on.</span></label></li>
+  </ul>
+  <div class="cert"><b>CompTIA Security+ (SY0-701)</b><span>List price $439 from CompTIA as of June 2026; authorized resellers are cheaper. Valid 3 years. If you sit it in 2027, check whether a newer exam version has replaced SY0-701.</span></div>
+</section>
+
+<section class="phase">
+  <div class="phase-head"><h2>Phase 2 · Networks, systems &amp; your home lab</h2><span class="when">Months 3–5</span><span class="tag blue">Blue Team</span></div>
+  <p class="goal">Goal: understand what "normal" looks like so you can spot what isn't.</p>
+  <ul class="tasks">
+    <li><label><input type="checkbox" id="t7"><span>Networking: TCP/IP, DNS, HTTP, subnetting, common ports. Capture and read traffic in Wireshark.</span></label></li>
+    <li><label><input type="checkbox" id="t8"><span>Linux command line: grep, awk, journalctl, auth logs, permissions.</span></label></li>
+    <li><label><input type="checkbox" id="t9"><span>Windows: Event IDs that matter (4624, 4625, 4688, 4720, 7045), Sysmon, PowerShell logging.</span></label></li>
+    <li><label><input type="checkbox" id="t10"><span>Build a home lab in VirtualBox: a Windows Server domain controller, one Windows client, one Linux box.</span></label></li>
+    <li><label><input type="checkbox" id="t11"><span>Install Wazuh (free SIEM/XDR) or Splunk Free, and forward the lab's logs into it.</span></label></li>
+    <li><label><input type="checkbox" id="t12"><span>Write up your lab build as your first portfolio post.</span></label></li>
+  </ul>
+</section>
+
+<section class="phase">
+  <div class="phase-head"><h2>Phase 3 · SOC analyst skills</h2><span class="when">Months 5–8</span><span class="tag blue">Blue Team</span></div>
+  <p class="goal">Goal: investigate alerts like a working analyst and earn a practical blue-team cert.</p>
+  <ul class="tasks">
+    <li><label><input type="checkbox" id="t13"><span>Complete TryHackMe "SOC Level 1" path.</span></label></li>
+    <li><label><input type="checkbox" id="t14"><span>Work through 20+ investigations on LetsDefend or Blue Team Labs Online.</span></label></li>
+    <li><label><input type="checkbox" id="t15"><span>Learn MITRE ATT&amp;CK: map every investigation you do to a technique ID.</span></label></li>
+    <li><label><input type="checkbox" id="t16"><span>Phishing analysis: headers, SPF/DKIM/DMARC, URL and attachment triage. This is very common work in Nigerian banks.</span></label></li>
+    <li><label><input type="checkbox" id="t17"><span>Attack your own lab (Atomic Red Team), then write detections for it in your SIEM.</span></label></li>
+    <li><label><input type="checkbox" id="t18"><span>Write 3 incident reports in a professional format: timeline, scope, root cause, recommendations.</span></label></li>
+  </ul>
+  <div class="cert"><b>Blue Team Level 1 (BTL1): recommended</b><span>A 24-hour practical incident-response exam covering phishing, threat intelligence, forensics, SIEM and IR. The cert doesn't expire. It costs around £399; check Security Blue Team's site for current pricing and any regional discounts.</span></div>
+  <div class="cert"><b>CompTIA CySA+: alternative</b><span>Multiple choice plus simulations. Better at getting past HR keyword filters, weaker at proving hands-on skill. Take it if the job adverts you're targeting ask for it by name.</span></div>
+</section>
+
+<section class="phase">
+  <div class="phase-head"><h2>Phase 4 · The GRC layer</h2><span class="when">Months 6–9 (overlaps Phase 3)</span><span class="tag grc">GRC</span></div>
+  <p class="goal">Goal: speak the language of frameworks, risk and regulators, especially the Nigerian ones.</p>
+  <ul class="tasks">
+    <li><label><input type="checkbox" id="t19"><span>Read NIST CSF 2.0 (free). Learn its six functions: Govern, Identify, Protect, Detect, Respond, Recover.</span></label></li>
+    <li><label><input type="checkbox" id="t20"><span>Study ISO/IEC 27001:2022: clauses 4–10 and the 93 Annex A controls grouped into 4 themes.</span></label></li>
+    <li><label><input type="checkbox" id="t21"><span>Read the CBN Risk-Based Cybersecurity Framework for DMBs and PSBs (2024). Note the 24-hour incident reporting rule and the risk register requirements.</span></label></li>
+    <li><label><input type="checkbox" id="t22"><span>Read the Nigeria Data Protection Act 2023: lawful bases, data subject rights, breach notification, DPO role.</span></label></li>
+    <li><label><input type="checkbox" id="t23"><span>Build a risk register for a fictional Lagos fintech: assets, threats, likelihood × impact, owners, treatments.</span></label></li>
+    <li><label><input type="checkbox" id="t24"><span>Write 3 policies for the same company: Access Control, Incident Response, Acceptable Use.</span></label></li>
+    <li><label><input type="checkbox" id="t25"><span>Bridge project: take one of your Phase 3 incidents and map it to the ISO 27001 controls and CBN requirements that failed or applied.</span></label></li>
+  </ul>
+  <div class="cert grc"><b>ISO/IEC 27001 Lead Implementer (PECB or similar)</b><span>Widely recognised by Nigerian banks, Big 4 advisory and consultancies. Local training providers in Lagos run it, so compare them on price. If budget is tight, start with the cheaper ISO 27001 Foundation.</span></div>
+</section>
+
+<section class="phase">
+  <div class="phase-head"><h2>Phase 5 · Portfolio &amp; job hunt</h2><span class="when">Months 9–12</span><span class="tag both">Both</span></div>
+  <p class="goal">Goal: turn everything above into interviews.</p>
+  <ul class="tasks">
+    <li><label><input type="checkbox" id="t26"><span>Put a portfolio page together: lab build, 3 incident reports, detections, risk register, policies, bridge project.</span></label></li>
+    <li><label><input type="checkbox" id="t27"><span>Rewrite your CV around security. List certs, lab and projects above your dev history.</span></label></li>
+    <li><label><input type="checkbox" id="t28"><span>Apply to SOC, IT risk and IT audit roles at banks, fintechs, telcos, MSSPs and Big 4 cyber/risk advisory teams.</span></label></li>
+    <li><label><input type="checkbox" id="t29"><span>Join communities: Cyber Safe Foundation, ISACA Lagos Chapter, OWASP Lagos, CyberGirls/local meetups. Attend at least one event a month.</span></label></li>
+    <li><label><input type="checkbox" id="t30"><span>Prepare for interviews: walk through one incident and one risk assessment out loud, start to finish.</span></label></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Certifications at a glance</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Cert</th><th>Track</th><th>When</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>CompTIA Security+</td><td><span class="tag both">Core</span></td><td>Month 3</td><td>Baseline that HR filters recognise</td></tr>
+      <tr><td>BTL1 (or CySA+)</td><td><span class="tag blue">Blue</span></td><td>Month 7–8</td><td>Proves you can actually investigate</td></tr>
+      <tr><td>ISO 27001 Lead Implementer</td><td><span class="tag grc">GRC</span></td><td>Month 9</td><td>The framework Nigerian orgs certify against</td></tr>
+      <tr><td>Microsoft SC-200 (optional)</td><td><span class="tag blue">Blue</span></td><td>Year 2</td><td>Sentinel/Defender skills; many banks run Microsoft stacks</td></tr>
+      <tr><td>CISA / CISM</td><td><span class="tag grc">GRC</span></td><td>Year 3+</td><td>Senior audit/management; both need years of experience</td></tr>
+      <tr><td>CISSP</td><td><span class="tag both">Both</span></td><td>Year 5</td><td>Needs 5 years' experience; you can pass early as an ISC2 Associate</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Where it leads</h2>
+  <div class="later">
+    <div><h3>Year 1–2</h3><span>SOC Analyst L1, IT Risk Analyst, Junior IT Auditor, GRC Analyst</span></div>
+    <div><h3>Year 2–4</h3><span>SOC L2 / Incident Responder, Security Consultant (Big 4), ISMS Lead</span></div>
+    <div><h3>Year 5+</h3><span>SOC Manager, Head of IT Risk, CISO track, where both halves of this plan pay off</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Keep in mind</h2>
+  <ul class="plain">
+    <li><strong>NYSC:</strong> try to get posted to, or redeployed to, a bank, telco, government IT/audit unit or consultancy. Even a non-security IT role there gives you real logs, real audits and references.</li>
+    <li><strong>Documentation is the job.</strong> SOC and GRC both run on clear writing. Every lab you do should end with a written report.</li>
+    <li><strong>Don't collect certs for the sake of it.</strong> Security+, BTL1 and ISO 27001, plus a strong portfolio, beats five multiple-choice certs.</li>
+    <li><strong>Verify prices before paying.</strong> Exam fees change often and many have regional or reseller discounts.</li>
+  </ul>
+</section>
+
+<footer>
+  <span>Progress is saved in this browser only.</span>
+  <button class="reset" id="reset" type="button">Clear all ticks</button>
+  <span>Sources: CompTIA Security+ pricing (Total Seminars, July 2026) · Security Blue Team BTL1 · CBN Risk-Based Cybersecurity Framework for DMBs &amp; PSBs (2024) · NDPA 2023.</span>
+</footer>
+</div>
+
+<script>
+(function(){
+  var KEY="defender-roadmap-v1", boxes=[].slice.call(document.querySelectorAll('ul.tasks input'));
+  var saved={}; try{saved=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}
+  function update(){
+    var done=boxes.filter(function(b){return b.checked}).length;
+    document.getElementById('count').textContent=done+" / "+boxes.length+" done";
+    document.getElementById('fill').style.width=(boxes.length?done/boxes.length*100:0)+"%";
+  }
+  function save(){var s={};boxes.forEach(function(b){if(b.checked)s[b.id]=1});try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){}}
+  boxes.forEach(function(b){b.checked=!!saved[b.id];b.addEventListener('change',function(){save();update()})});
+  document.getElementById('reset').addEventListener('click',function(){boxes.forEach(function(b){b.checked=false});save();update()});
+  update();
+})();
+</script>
+
+</body></html>

@@ -1,0 +1,40 @@
+{
+  "domains": [
+    {
+      "id": "d1",
+      "number": 1,
+      "title": "General Security Concepts",
+      "weight": 12,
+      "videos": 18
+    },
+    {
+      "id": "d2",
+      "number": 2,
+      "title": "Threats, Vulnerabilities, and Mitigations",
+      "weight": 22,
+      "videos": 38
+    },
+    {
+      "id": "d3",
+      "number": 3,
+      "title": "Security Architecture",
+      "weight": 18,
+      "videos": 18
+    },
+    {
+      "id": "d4",
+      "number": 4,
+      "title": "Security Operations",
+      "weight": 28,
+      "videos": 29
+    },
+    {
+      "id": "d5",
+      "number": 5,
+      "title": "Security Program Management and Oversight",
+      "weight": 20,
+      "videos": 17
+    }
+  ],
+  "generated": "2026-09-24T15:19:27.811Z"
+}

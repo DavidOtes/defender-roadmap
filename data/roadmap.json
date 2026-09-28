@@ -1,0 +1,511 @@
+{
+  "title": "From graduate to defender",
+  "lede": "One technical track that gets you hired as a SOC analyst, with a governance, risk and compliance layer built alongside it. That combination fits how Nigerian banks and fintechs actually hire under the CBN cybersecurity framework and the NDPA.",
+  "pace": "10–15 hrs/week",
+  "fitsAround": "NYSC",
+  "firstJob": "SOC Analyst L1 / IT Risk Analyst",
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Foundations & Security+",
+      "when": "Months 1–3",
+      "startMonth": 1,
+      "endMonth": 3,
+      "track": "core",
+      "goal": "Pass Security+ (SY0-701) and get comfortable with hands-on basics.",
+      "why": "<p>Security+ is the one certificate almost every entry-level security advert in Nigeria lists. More importantly, its five domains are the shared vocabulary of both SOC work and GRC work. You study it once and it serves both tracks for the rest of the plan.</p>",
+      "tasks": [
+        {
+          "id": "t1",
+          "title": "Watch Professor Messer's free SY0-701 course end to end, with the companion notes open.",
+          "why": "Messer covers every objective but keeps each video short. The companion notes in this app add the depth he skips, so read the note for each video as you watch it.",
+          "how": [
+            "Study one domain at a time, roughly one domain every two weeks (Domain 4 is the biggest; give it three).",
+            "For every video: watch, read the deep dive, mark the video done and rate your confidence 1–5.",
+            "Take the 3-question self-check. Anything under 3/3 or confidence 2 or lower goes on your review list automatically.",
+            "At the end of each domain, redo every review-list video before moving on."
+          ],
+          "resources": [
+            {"label": "Professor Messer SY0-701 course", "url": "https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/sy0-701-comptia-security-plus-course/"},
+            {"label": "Security+ companion in this app", "url": "#/secplus"}
+          ],
+          "doneWhen": "All 5 domains show 100% in the Security+ companion and your review list is empty."
+        },
+        {
+          "id": "t2",
+          "title": "Complete TryHackMe \"Pre-Security\" and \"Cyber Security 101\" learning paths.",
+          "why": "Security+ is theory. These two paths put your hands on Linux, Windows, networking and web basics in a browser so you never have to set anything up.",
+          "how": [
+            "Do Pre-Security first (about 40 hours), then Cyber Security 101.",
+            "Aim for 2 or 3 rooms per study session; do not binge and forget.",
+            "Keep a running notes file per room: the command, what it did, and why it mattered."
+          ],
+          "resources": [
+            {"label": "TryHackMe", "url": "https://tryhackme.com/"}
+          ],
+          "doneWhen": "Both path badges appear on your TryHackMe profile."
+        },
+        {
+          "id": "t3",
+          "title": "Buy one practice-exam set and track your weak domains.",
+          "why": "Practice exams tell you what you actually know, not what you feel you know. One good set is enough; more sets just cost money.",
+          "how": [
+            "Jason Dion's Security+ practice exams on Udemy are the common choice; wait for a Udemy sale.",
+            "Take the first exam cold after Domain 3 to get a baseline. Do not study for it.",
+            "After every exam, log the score in your study log and list the objectives you missed.",
+            "Re-study only those objectives, then take the next exam."
+          ],
+          "resources": [
+            {"label": "Udemy", "url": "https://www.udemy.com/"}
+          ],
+          "doneWhen": "You have logged at least 4 full practice exams."
+        },
+        {
+          "id": "t4",
+          "title": "Pay special attention to Domain 5 (governance, risk, compliance).",
+          "why": "Domain 5 is your GRC starting point. Risk registers, policies, standards, procedures, third-party risk and compliance are the day job of an IT risk analyst.",
+          "how": [
+            "When you reach Domain 5, slow down: read each companion note twice.",
+            "For each concept, write one sentence about how a Nigerian bank would apply it under the CBN framework or NDPA.",
+            "Keep those sentences; they become interview answers in Phase 5."
+          ],
+          "resources": [
+            {"label": "Domain 5 in the companion", "url": "#/secplus/d5"}
+          ],
+          "doneWhen": "Every Domain 5 video is done with confidence 4 or higher."
+        },
+        {
+          "id": "t5",
+          "title": "Book and sit the exam once you score 85%+ consistently on practice tests.",
+          "why": "Booking creates a deadline, and deadlines create study hours. But booking too early wastes money you cannot get back.",
+          "how": [
+            "When two consecutive practice exams are 85% or higher, set the exam date in Settings.",
+            "Compare voucher prices from authorized resellers before paying CompTIA list price.",
+            "Choose online proctored or a Pearson VUE centre in Lagos/Abuja; test your webcam and ID well before the day.",
+            "The week before: no new material, only review-list videos and one final practice exam."
+          ],
+          "resources": [
+            {"label": "CompTIA Security+", "url": "https://www.comptia.org/certifications/security"}
+          ],
+          "doneWhen": "You have a passing score report."
+        },
+        {
+          "id": "t6",
+          "title": "Create a LinkedIn cybersecurity headline and a GitHub or blog to document everything from here on.",
+          "why": "Recruiters search LinkedIn by headline. A public record of your labs is the portfolio that gets you past the CV screen with no experience.",
+          "how": [
+            "Headline pattern: 'Aspiring SOC Analyst | Security+ (in progress) | Blue Team & GRC'.",
+            "Create a GitHub repo or a simple blog. Every lab or report from now on gets a write-up there.",
+            "Post a short LinkedIn update every two weeks about what you learned."
+          ],
+          "resources": [
+            {"label": "GitHub", "url": "https://github.com/"}
+          ],
+          "doneWhen": "Headline is live and the first post (your study plan) is published."
+        }
+      ],
+      "certs": [
+        {"name": "CompTIA Security+ (SY0-701)", "track": "core", "note": "List price $439 from CompTIA as of June 2026; authorized resellers are cheaper. Valid 3 years. If you sit it in 2027, check whether a newer exam version has replaced SY0-701."}
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Networks, systems & your home lab",
+      "when": "Months 3–5",
+      "startMonth": 3,
+      "endMonth": 5,
+      "track": "blue",
+      "goal": "Understand what normal looks like so you can spot what isn't.",
+      "why": "<p>A SOC analyst's core skill is recognising abnormal activity, and you cannot recognise abnormal without knowing normal. This phase builds that baseline in your head and in a lab you control.</p>",
+      "tasks": [
+        {
+          "id": "t7",
+          "title": "Networking: TCP/IP, DNS, HTTP, subnetting, common ports. Capture and read traffic in Wireshark.",
+          "why": "Almost every alert you will ever triage is a network event. If you cannot read a packet capture, you are guessing.",
+          "how": [
+            "Learn the TCP three-way handshake, DNS query/response, and an HTTP request/response by capturing your own browser traffic.",
+            "Memorise the 20 or so ports that matter: 22, 23, 25, 53, 80, 88, 110, 135, 139, 143, 389, 443, 445, 465, 587, 636, 993, 995, 3306, 3389, 5985.",
+            "Practise subnetting until /24, /25, /26 and /27 splits are automatic.",
+            "Use Wireshark filters like 'dns', 'http.request', 'tcp.flags.syn==1' and follow a TCP stream."
+          ],
+          "resources": [
+            {"label": "Wireshark", "url": "https://www.wireshark.org/"}
+          ],
+          "doneWhen": "You can explain a captured web login from DNS to TLS handshake without notes."
+        },
+        {
+          "id": "t8",
+          "title": "Linux command line: grep, awk, journalctl, auth logs, permissions.",
+          "why": "Most servers, SIEMs and security tools run on Linux. Log hunting on the command line is a daily SOC task.",
+          "how": [
+            "Practise on a Ubuntu VM: navigate, read /var/log/auth.log, use grep -i, awk '{print $1}', sort | uniq -c | sort -rn.",
+            "Understand users, groups, chmod/chown, sudo and cron.",
+            "Find failed SSH logins in auth.log and count them by source IP; that is a real investigation."
+          ],
+          "resources": [
+            {"label": "TryHackMe Linux Fundamentals", "url": "https://tryhackme.com/"}
+          ],
+          "doneWhen": "You can pull the top 5 attacking IPs from an auth log with one command line."
+        },
+        {
+          "id": "t9",
+          "title": "Windows: Event IDs that matter, Sysmon, PowerShell logging.",
+          "why": "Nigerian banks are heavily Windows and Active Directory. Windows event logs are where most of your alerts will come from.",
+          "how": [
+            "Learn these IDs cold: 4624 (logon), 4625 (failed logon), 4688 (process creation), 4720 (user created), 4728/4732 (added to group), 4740 (lockout), 7045 (service installed), 1102 (audit log cleared).",
+            "Understand logon types 2, 3, 10 and why type 3 from a workstation to another workstation is suspicious.",
+            "Install Sysmon with a community config and read Event IDs 1, 3, 11, 13.",
+            "Enable PowerShell script block logging (Event ID 4104) and see what an encoded command looks like."
+          ],
+          "resources": [
+            {"label": "Sysmon", "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon"}
+          ],
+          "doneWhen": "You can explain a lateral-movement chain using only event IDs."
+        },
+        {
+          "id": "t10",
+          "title": "Build a home lab in VirtualBox: a Windows Server domain controller, one Windows client, one Linux box.",
+          "why": "You need a place to break things and watch what the logs say. A domain gives you realistic authentication traffic.",
+          "how": [
+            "Minimum: 16 GB RAM on the host is comfortable; 8 GB works if you run two VMs at a time.",
+            "Windows Server evaluation ISO (180 days) as the domain controller; Windows 10/11 evaluation as the client; Ubuntu Server as the Linux box.",
+            "Put all three on a VirtualBox internal or host-only network with the DC as DNS.",
+            "Join the client to the domain, create two users, log in as each."
+          ],
+          "resources": [
+            {"label": "VirtualBox", "url": "https://www.virtualbox.org/"}
+          ],
+          "doneWhen": "A domain user can log into the client and you can see Event ID 4624 on the DC."
+        },
+        {
+          "id": "t11",
+          "title": "Install Wazuh (free SIEM/XDR) or Splunk Free, and forward the lab's logs into it.",
+          "why": "Every SOC job advert says SIEM. Owning one, even a small one, is the fastest way to speak about it credibly.",
+          "how": [
+            "Wazuh is free, open source and closer to what small Nigerian MSSPs use; Splunk is what the big banks run. Wazuh is the recommended start.",
+            "Install the Wazuh all-in-one on the Ubuntu VM, then install agents on the DC and client.",
+            "Generate events: failed logons, new user, a service install. Find each one in the Wazuh dashboard.",
+            "Write your first custom rule that alerts on 5 failed logons in 2 minutes."
+          ],
+          "resources": [
+            {"label": "Wazuh", "url": "https://wazuh.com/"}
+          ],
+          "doneWhen": "A failed-logon burst on the client triggers an alert you wrote."
+        },
+        {
+          "id": "t12",
+          "title": "Write up your lab build as your first portfolio post.",
+          "why": "Writing is half the SOC job. A clear lab write-up also proves to a hiring manager you can actually do the work.",
+          "how": [
+            "Structure: goal, architecture diagram, build steps, problems you hit and how you fixed them, screenshots of a detection firing.",
+            "Keep it under 1500 words; link to configs in your GitHub."
+          ],
+          "resources": [],
+          "doneWhen": "The post is public and linked from your LinkedIn."
+        }
+      ],
+      "certs": []
+    },
+    {
+      "id": "p3",
+      "title": "SOC analyst skills",
+      "when": "Months 5–8",
+      "startMonth": 5,
+      "endMonth": 8,
+      "track": "blue",
+      "goal": "Investigate alerts like a working analyst and earn a practical blue-team cert.",
+      "why": "<p>This is the phase that gets you the first job. Everything here mirrors what an L1 analyst does on shift: triage alerts, analyse phishing, map to ATT&CK, write it up.</p>",
+      "tasks": [
+        {
+          "id": "t13",
+          "title": "Complete TryHackMe \"SOC Level 1\" path.",
+          "why": "It is the closest free thing to an L1 analyst onboarding: SIEM, network traffic analysis, endpoint, threat intel, phishing, forensics.",
+          "how": [
+            "Work through it in order; do not skip the Splunk and ELK rooms even if you use Wazuh.",
+            "For every room, note the tool, what question it answered, and how you would do it in your own lab."
+          ],
+          "resources": [
+            {"label": "TryHackMe SOC Level 1", "url": "https://tryhackme.com/"}
+          ],
+          "doneWhen": "Path certificate downloaded and posted."
+        },
+        {
+          "id": "t14",
+          "title": "Work through 20+ investigations on LetsDefend or Blue Team Labs Online.",
+          "why": "Repetition builds the triage instinct. Twenty real-feeling alerts teach you more than any video.",
+          "how": [
+            "LetsDefend's SOC alerts simulate a real queue: pick up an alert, investigate, close as true or false positive with notes.",
+            "Log each one in your study log with the verdict and what you learned.",
+            "After 10, you should be noticeably faster. After 20, you should have a personal triage checklist."
+          ],
+          "resources": [
+            {"label": "LetsDefend", "url": "https://letsdefend.io/"},
+            {"label": "Blue Team Labs Online", "url": "https://blueteamlabs.online/"}
+          ],
+          "doneWhen": "20 investigations logged with verdicts."
+        },
+        {
+          "id": "t15",
+          "title": "Learn MITRE ATT&CK: map every investigation you do to a technique ID.",
+          "why": "ATT&CK is the shared language of detection engineering and threat intel. Interviewers ask about it directly.",
+          "how": [
+            "Learn the 14 tactics first (Reconnaissance through Impact).",
+            "For every investigation, write the technique ID (e.g. T1566.001 spearphishing attachment) in your notes.",
+            "Use the ATT&CK Navigator to colour in what your lab can and cannot detect."
+          ],
+          "resources": [
+            {"label": "MITRE ATT&CK", "url": "https://attack.mitre.org/"}
+          ],
+          "doneWhen": "You can name the tactic and a technique for any alert in under a minute."
+        },
+        {
+          "id": "t16",
+          "title": "Phishing analysis: headers, SPF/DKIM/DMARC, URL and attachment triage.",
+          "why": "Phishing and business email compromise are the number one incident type in Nigerian banks and fintechs. This is very common L1 work.",
+          "how": [
+            "Learn to read Received headers bottom-up, and the Authentication-Results header for SPF/DKIM/DMARC outcomes.",
+            "Triage URLs with urlscan.io and VirusTotal; never click them.",
+            "Detonate attachments only in a sandbox (Any.Run free tier or your isolated lab VM).",
+            "Write a one-page phishing report template: sender, indicators, verdict, actions."
+          ],
+          "resources": [
+            {"label": "VirusTotal", "url": "https://www.virustotal.com/"},
+            {"label": "urlscan.io", "url": "https://urlscan.io/"}
+          ],
+          "doneWhen": "You have analysed and documented 10 phishing samples."
+        },
+        {
+          "id": "t17",
+          "title": "Attack your own lab (Atomic Red Team), then write detections for it in your SIEM.",
+          "why": "Running a known technique and then building the rule that catches it is exactly what detection engineers do. It also proves your SIEM works.",
+          "how": [
+            "Install Atomic Red Team on the Windows client; run 5 atomics (e.g. T1003 credential dumping, T1059.001 PowerShell, T1136 create account).",
+            "For each, find the evidence in Wazuh, then write a rule that fires on it.",
+            "Document the technique, the evidence, the rule and a screenshot."
+          ],
+          "resources": [
+            {"label": "Atomic Red Team", "url": "https://github.com/redcanaryco/atomic-red-team"}
+          ],
+          "doneWhen": "5 techniques, 5 detections, 1 write-up."
+        },
+        {
+          "id": "t18",
+          "title": "Write 3 incident reports in a professional format.",
+          "why": "The report is the product of an investigation. Managers and regulators read the report, not your terminal.",
+          "how": [
+            "Format: executive summary, timeline, scope and impact, root cause, ATT&CK mapping, containment and eradication, recommendations.",
+            "Base them on your LetsDefend investigations or your Atomic Red Team runs.",
+            "Keep the executive summary to 5 sentences a bank manager could read."
+          ],
+          "resources": [],
+          "doneWhen": "3 reports in your portfolio."
+        }
+      ],
+      "certs": [
+        {"name": "Blue Team Level 1 (BTL1): recommended", "track": "blue", "note": "A 24-hour practical incident-response exam covering phishing, threat intelligence, forensics, SIEM and IR. The cert doesn't expire. It costs around £399; check Security Blue Team's site for current pricing and any regional discounts."},
+        {"name": "CompTIA CySA+: alternative", "track": "blue", "note": "Multiple choice plus simulations. Better at getting past HR keyword filters, weaker at proving hands-on skill. Take it if the job adverts you're targeting ask for it by name."}
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "The GRC layer",
+      "when": "Months 6–9 (overlaps Phase 3)",
+      "startMonth": 6,
+      "endMonth": 9,
+      "track": "grc",
+      "goal": "Speak the language of frameworks, risk and regulators, especially the Nigerian ones.",
+      "why": "<p>A defender who can map an alert to an ISO 27001 control or a CBN requirement is rare. This layer is what turns a SOC analyst into someone who can move into risk, audit and eventually leadership.</p>",
+      "tasks": [
+        {
+          "id": "t19",
+          "title": "Read NIST CSF 2.0 and learn its six functions.",
+          "why": "It is the simplest complete framework and the one most others map to. Govern, Identify, Protect, Detect, Respond, Recover is a mental model you will use for the rest of your career.",
+          "how": [
+            "Read the core document (it is short) and the quick-start guide.",
+            "For each function, list two things your home lab does and two it does not.",
+            "Notice that SOC work lives in Detect and Respond; GRC work lives in Govern and Identify."
+          ],
+          "resources": [
+            {"label": "NIST Cybersecurity Framework", "url": "https://www.nist.gov/cyberframework"}
+          ],
+          "doneWhen": "You can explain all six functions with an example each."
+        },
+        {
+          "id": "t20",
+          "title": "Study ISO/IEC 27001:2022: clauses 4–10 and the 93 Annex A controls in 4 themes.",
+          "why": "It is the standard Nigerian banks, fintechs and Big 4 clients certify against. Lead Implementer training assumes you know this structure.",
+          "how": [
+            "Clauses 4–10 are the management system: context, leadership, planning, support, operation, performance evaluation, improvement.",
+            "Annex A 2022 has 93 controls in Organisational (37), People (8), Physical (14), Technological (34).",
+            "Pick 10 technological controls and write how your lab or a SOC implements each one."
+          ],
+          "resources": [
+            {"label": "ISO/IEC 27001", "url": "https://www.iso.org/standard/27001"}
+          ],
+          "doneWhen": "You can describe the PDCA cycle of an ISMS and name the 4 Annex A themes."
+        },
+        {
+          "id": "t21",
+          "title": "Read the CBN Risk-Based Cybersecurity Framework for DMBs and PSBs.",
+          "why": "This is what every Nigerian bank's security team is measured against. Knowing it makes you instantly relevant in interviews.",
+          "how": [
+            "Note the governance requirements (CISO role, board reporting), the risk register requirement, and the 24-hour incident reporting rule.",
+            "Map each major requirement to the NIST CSF function it belongs to.",
+            "Write a one-page summary you could hand to a manager."
+          ],
+          "resources": [
+            {"label": "Central Bank of Nigeria", "url": "https://www.cbn.gov.ng/"}
+          ],
+          "doneWhen": "One-page summary in your portfolio."
+        },
+        {
+          "id": "t22",
+          "title": "Read the Nigeria Data Protection Act 2023.",
+          "why": "NDPA compliance is a growing hiring area. Lawful bases, data subject rights, breach notification and the DPO role come up in GRC interviews.",
+          "how": [
+            "Focus on: lawful bases for processing, data subject rights, controller vs processor duties, breach notification timelines, the Data Protection Officer role, and the NDPC's powers.",
+            "Compare with GDPR where they differ; interviewers like that you know both."
+          ],
+          "resources": [
+            {"label": "Nigeria Data Protection Commission", "url": "https://ndpc.gov.ng/"}
+          ],
+          "doneWhen": "You can explain the difference between a controller and a processor with a Nigerian example."
+        },
+        {
+          "id": "t23",
+          "title": "Build a risk register for a fictional Lagos fintech.",
+          "why": "The risk register is the central artefact of GRC. Building one end to end is the best proof you understand risk management.",
+          "how": [
+            "Define the company: 40 staff, a mobile wallet app, AWS hosting, a customer support team, one office in Lagos.",
+            "List 15 assets, then threats and vulnerabilities per asset.",
+            "Score likelihood and impact 1–5, multiply for inherent risk, assign an owner, choose a treatment (mitigate, transfer, accept, avoid) and record residual risk.",
+            "Add key risk indicators for the top 5."
+          ],
+          "resources": [],
+          "doneWhen": "A 15-row register with owners, treatments and residual scores."
+        },
+        {
+          "id": "t24",
+          "title": "Write 3 policies for the same company: Access Control, Incident Response, Acceptable Use.",
+          "why": "Policy writing is a core GRC deliverable, and it shows you can turn a framework into plain rules people follow.",
+          "how": [
+            "Each policy: purpose, scope, roles, policy statements, exceptions, enforcement, review cycle.",
+            "Reference the ISO 27001 Annex A control and the CBN or NDPA requirement each statement satisfies.",
+            "Keep each under 3 pages."
+          ],
+          "resources": [],
+          "doneWhen": "3 policies in your portfolio."
+        },
+        {
+          "id": "t25",
+          "title": "Bridge project: map one of your Phase 3 incidents to the ISO 27001 controls and CBN requirements that failed or applied.",
+          "why": "This project is the whole point of the plan. It shows you can move from an alert to a control gap to a regulatory obligation, which is rare and valuable.",
+          "how": [
+            "Take your best incident report.",
+            "For each finding, name the Annex A control that should have prevented or detected it, and the CBN clause that requires it.",
+            "Add a short remediation plan with owners and dates, then a paragraph on whether the incident would have needed CBN notification."
+          ],
+          "resources": [],
+          "doneWhen": "The bridge document is the headline piece in your portfolio."
+        }
+      ],
+      "certs": [
+        {"name": "ISO/IEC 27001 Lead Implementer (PECB or similar)", "track": "grc", "note": "Widely recognised by Nigerian banks, Big 4 advisory and consultancies. Local training providers in Lagos run it, so compare them on price. If budget is tight, start with the cheaper ISO 27001 Foundation."}
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Portfolio & job hunt",
+      "when": "Months 9–12",
+      "startMonth": 9,
+      "endMonth": 12,
+      "track": "both",
+      "goal": "Turn everything above into interviews.",
+      "why": "<p>Everything you built is worthless if nobody sees it. This phase is about packaging, applying at volume and practising the interview.</p>",
+      "tasks": [
+        {
+          "id": "t26",
+          "title": "Put a portfolio page together.",
+          "why": "One link that shows the lab, the reports, the detections, the register, the policies and the bridge project answers the question 'but do you have experience?'",
+          "how": [
+            "A simple GitHub Pages site or Notion page is enough.",
+            "Order: bridge project, 3 incident reports, detections, lab build, risk register, policies.",
+            "Each item: 2-sentence summary and a link."
+          ],
+          "resources": [],
+          "doneWhen": "The portfolio link is in your CV header and LinkedIn."
+        },
+        {
+          "id": "t27",
+          "title": "Rewrite your CV around security.",
+          "why": "Recruiters spend seconds on a CV. Certs, lab and projects need to be above any unrelated history.",
+          "how": [
+            "One page. Header with portfolio link. Certifications first, then Projects (with outcomes), then Skills (tools by name: Wazuh, Wireshark, Sysmon, ATT&CK, ISO 27001), then education and NYSC.",
+            "Use the exact keywords from 5 job adverts you want."
+          ],
+          "resources": [],
+          "doneWhen": "A one-page CV reviewed by at least one person in the industry."
+        },
+        {
+          "id": "t28",
+          "title": "Apply to SOC, IT risk and IT audit roles at banks, fintechs, telcos, MSSPs and Big 4 cyber/risk advisory teams.",
+          "why": "Volume matters. Entry-level hiring is noisy and a 5% response rate is normal.",
+          "how": [
+            "Target 5 applications per week, tracked in your study log with the date, company, role and status.",
+            "Use LinkedIn, company career pages, and referrals from the communities you join.",
+            "Follow up politely after 10 working days."
+          ],
+          "resources": [],
+          "doneWhen": "40 tracked applications or an offer, whichever comes first."
+        },
+        {
+          "id": "t29",
+          "title": "Join communities and attend at least one event a month.",
+          "why": "Most Nigerian security hires happen through referrals. Meetups are where those referrals start.",
+          "how": [
+            "Cyber Safe Foundation, ISACA Lagos Chapter, OWASP Lagos, and local CTF or blue-team groups.",
+            "Volunteer to give a 10-minute talk on your bridge project once you are comfortable."
+          ],
+          "resources": [
+            {"label": "OWASP Lagos", "url": "https://owasp.org/www-chapter-lagos/"},
+            {"label": "ISACA", "url": "https://www.isaca.org/"},
+            {"label": "Cyber Safe Foundation", "url": "https://cybersafefoundation.org/"}
+          ],
+          "doneWhen": "Three events attended and five new industry contacts."
+        },
+        {
+          "id": "t30",
+          "title": "Prepare for interviews: walk through one incident and one risk assessment out loud, start to finish.",
+          "why": "Interviewers want to hear how you think. A rehearsed story about a real investigation beats memorised definitions.",
+          "how": [
+            "Rehearse a 3-minute version and a 10-minute version of your best incident report.",
+            "Rehearse explaining your risk register: how you scored, why you chose the treatments.",
+            "Practise common questions: explain the CIA triad, what is a false positive, walk me through a phishing triage, what is the difference between a policy and a standard."
+          ],
+          "resources": [],
+          "doneWhen": "You have done at least two mock interviews with another person."
+        }
+      ],
+      "certs": []
+    }
+  ],
+  "certTable": [
+    {"cert": "CompTIA Security+", "track": "core", "when": "Month 3", "why": "Baseline that HR filters recognise"},
+    {"cert": "BTL1 (or CySA+)", "track": "blue", "when": "Month 7–8", "why": "Proves you can actually investigate"},
+    {"cert": "ISO 27001 Lead Implementer", "track": "grc", "when": "Month 9", "why": "The framework Nigerian orgs certify against"},
+    {"cert": "Microsoft SC-200 (optional)", "track": "blue", "when": "Year 2", "why": "Sentinel/Defender skills; many banks run Microsoft stacks"},
+    {"cert": "CISA / CISM", "track": "grc", "when": "Year 3+", "why": "Senior audit/management; both need years of experience"},
+    {"cert": "CISSP", "track": "both", "when": "Year 5", "why": "Needs 5 years' experience; you can pass early as an ISC2 Associate"}
+  ],
+  "later": [
+    {"title": "Year 1–2", "roles": "SOC Analyst L1, IT Risk Analyst, Junior IT Auditor, GRC Analyst"},
+    {"title": "Year 2–4", "roles": "SOC L2 / Incident Responder, Security Consultant (Big 4), ISMS Lead"},
+    {"title": "Year 5+", "roles": "SOC Manager, Head of IT Risk, CISO track, where both halves of this plan pay off"}
+  ],
+  "keepInMind": [
+    {"head": "NYSC", "body": "Try to get posted to, or redeployed to, a bank, telco, government IT/audit unit or consultancy. Even a non-security IT role there gives you real logs, real audits and references."},
+    {"head": "Documentation is the job.", "body": "SOC and GRC both run on clear writing. Every lab you do should end with a written report."},
+    {"head": "Don't collect certs for the sake of it.", "body": "Security+, BTL1 and ISO 27001, plus a strong portfolio, beats five multiple-choice certs."},
+    {"head": "Verify prices before paying.", "body": "Exam fees change often and many have regional or reseller discounts."}
+  ]
+}
